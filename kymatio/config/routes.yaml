@@ -1,0 +1,30 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+api.index:
+    path: /index
+    controller: App\Controller\CustomerController::index
+    methods: GET
+
+api.create:
+    path: /create
+    controller: App\Controller\CustomerController::create
+    methods: POST    
+
+api.update:
+    path: /update/{id}
+    controller: App\Controller\CustomerController::update
+    methods: POST        
+ 
+api.delete:
+    path: /delete/{id}
+    controller: App\Controller\CustomerController::delete
+    methods: POST
