@@ -10,8 +10,8 @@ app.swagger_ui:
     defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
 
 api.index:
-    path: /index
-    controller: App\Controller\CustomerController::index
+    path: /read
+    controller: App\Controller\CustomerController::read
     methods: GET
 
 api.create:
@@ -22,9 +22,14 @@ api.create:
 api.update:
     path: /update/{id}
     controller: App\Controller\CustomerController::update
-    methods: POST        
+    methods: POST    
  
 api.delete:
     path: /delete/{id}
     controller: App\Controller\CustomerController::delete
-    methods: POST
+    methods: DELETE
+
+api.getCustomer:
+    path: /customer/{id}
+    controller: App\Controller\CustomerController::getCustomer
+    methods: GET
